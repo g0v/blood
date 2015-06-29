@@ -1,6 +1,6 @@
 # blood
 
-A cron job for fetching blood.org.tw to gh-pages.
+A cron job for fetching data from blood.org.tw, convert to JSON file and send to gh-pages.
 
 # Usage
 
