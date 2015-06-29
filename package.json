@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "blood-fetcher",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "A way to fetch blood.org.tw",
   "keywords": [
     "OpenShift",
     "Node.js",
@@ -9,27 +9,24 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
+    "name": "Yuren Ju",
+    "email": "yurenju@gmail.com",
     "url": "http://www.openshift.com/"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://g0v.tw/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/g0v/blood.git"
   },
-
   "engines": {
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
-
   "dependencies": {
-    "express": "~3.4.4"
+    "jsdom": "^3.1.2",
+    "shelljs": "^0.5.1"
   },
   "devDependencies": {},
   "bundleDependencies": [],
-
-  "private": true,
-  "main": "server.js"
+  "main": "main.js"
 }
