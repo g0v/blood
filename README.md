@@ -4,6 +4,8 @@ A cron job for fetching data from blood.org.tw, convert to JSON file and send to
 
 # Usage
 
+Generated json here: http://g0v.github.io/blood/blood.json
+
 export GH_TOKEN & GH_REF to your environment variables
 
 ```shell
