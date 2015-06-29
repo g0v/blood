@@ -28,5 +28,6 @@
   },
   "devDependencies": {},
   "bundleDependencies": [],
-  "main": "main.js"
+  "main": "main.js",
+  "license" : "MIT"
 }
