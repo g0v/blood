@@ -34,5 +34,6 @@ jsdom.env(
     exec('git commit -m "Automatic commit: ' + Date() + '"');
     exec('git push --force "https://' + env['GH_TOKEN'] +
          '@' + env['GH_REF'] + '" master:gh-pages');
+    exit(0);
   }
 );
