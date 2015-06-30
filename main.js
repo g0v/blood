@@ -1,4 +1,5 @@
 var jsdom = require('jsdom');
+var moment = require('moment-timezone');
 require('shelljs/global');
 
 var status = {
@@ -13,7 +14,7 @@ jsdom.env(
   function (errors, window) {
     var $ = window.$;
     var storages = $('.Storage').toArray();
-    var json = {};
+    var json = {time: moment().tz("Asia/Taipei").format()};
     storages.forEach(function(s) {
       var name = $(s).find('#StorageHeader a').text();
       json[name] = {name: name};

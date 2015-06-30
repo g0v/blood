@@ -24,10 +24,11 @@
   },
   "dependencies": {
     "jsdom": "^3.1.2",
+    "moment-timezone": "^0.4.0",
     "shelljs": "^0.5.1"
   },
   "devDependencies": {},
   "bundleDependencies": [],
   "main": "main.js",
-  "license" : "MIT"
+  "license": "MIT"
 }
