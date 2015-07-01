@@ -25,16 +25,16 @@ jsdom.env(
       });
     });
     rm('-rf', 'out');
-    mkdir('-p', 'out');
+    exec('git clone "https://' + env['GH_TOKEN'] +
+         '@' + env['GH_REF'] + '" --depth 1 -b gh-pages out');
     cd('out');
-    exec('git init');
     exec('git config user.name "Automatic Commit"');
     exec('git config user.email "blood@g0v.tw"');
     JSON.stringify(json, null, 2).to('blood.json');
     exec('git add .');
     exec('git commit -m "Automatic commit: ' + Date() + '"');
-    exec('git push --force "https://' + env['GH_TOKEN'] +
-         '@' + env['GH_REF'] + '" master:gh-pages');
+    exec('git push "https://' + env['GH_TOKEN'] +
+         '@' + env['GH_REF'] + '" gh-pages');
     exit(0);
   }
 );
