@@ -2,6 +2,9 @@
   "name": "blood-fetcher",
   "version": "1.0.0",
   "description": "A way to fetch blood.org.tw",
+  "scripts": {
+    "test": "echo 'No test for now.'"
+  },
   "keywords": [
     "OpenShift",
     "Node.js",
