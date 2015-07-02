@@ -1,5 +1,5 @@
 {
-  "time": "2015-07-02T14:32:09+08:00",
+  "time": "2015-07-02T16:32:20+08:00",
   "台北捐血中心": {
     "name": "台北捐血中心",
     "StorageA": "full",
@@ -16,7 +16,7 @@
   },
   "台中捐血中心": {
     "name": "台中捐血中心",
-    "StorageA": "full",
+    "StorageA": "medium",
     "StorageB": "full",
     "StorageO": "full",
     "StorageAB": "full"
