@@ -21,7 +21,7 @@ var worker = [
   'file "package.json"',
   'build "npm config set strict-ssl false; npm install --production"',
   'set_env "GH_TOKEN", "' + env.GH_TOKEN + '"',
-  'set_env "GH_REF", "github.com/g0v/blood.git"',
+  'set_env "GH_REF", "' + env.GH_REF + '"',
   'remote'
 ];
 
