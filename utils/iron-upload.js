@@ -5,7 +5,7 @@
 var path = require('path');
 require('shelljs/global');
 
-const PROJECT_DIR = path.join(__dirname, '..');
+var PROJECT_DIR = path.join(__dirname, '..');
 
 var iron = {
   'token': env.IRON_TOKEN,
