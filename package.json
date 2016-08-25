@@ -22,8 +22,8 @@
     "url": "https://github.com/g0v/blood.git"
   },
   "engines": {
-    "node": ">= 0.6.0",
-    "npm": ">= 1.0.0"
+    "node": "4.1.x",
+    "npm": "2.14.x"
   },
   "dependencies": {
     "jsdom": "^3.1.2",
