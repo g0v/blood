@@ -30,6 +30,7 @@ const commitToRepo = (repo, blood) => {
 
 request(dataSource, (err, res, body) => {
   if (err) {
+    // eslint-disable-next-line no-console
     console.error(err);
     return;
   }
