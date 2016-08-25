@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "A way to fetch blood.org.tw",
   "scripts": {
+    "lint": "eslint .",
+    "start": "node main.js",
     "test": "echo 'No test for now.'"
   },
   "keywords": [
@@ -32,7 +34,11 @@
     "request": "^2.74.0",
     "shelljs": "^0.5.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-plugin-import": "^1.14.0"
+  },
   "bundleDependencies": [],
   "main": "main.js",
   "license": "MIT"

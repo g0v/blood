@@ -1,9 +1,7 @@
-'use strict';
-
-/* global exec, rm, env, cd, exit */
+/* global exec, rm, cd, exit */
 
 const request = require('request');
-const cheerio = require('cheerio')
+const cheerio = require('cheerio');
 const moment = require('moment-timezone');
 require('shelljs/global');
 require('dotenv').config();
@@ -14,7 +12,7 @@ const bloodTypes = ['StorageA', 'StorageB', 'StorageO', 'StorageAB'];
 const statusMap = {
   'images/StorageIcon001.jpg': 'empty',
   'images/StorageIcon002.jpg': 'medium',
-  'images/StorageIcon003.jpg': 'full'
+  'images/StorageIcon003.jpg': 'full',
 };
 
 const commitToRepo = (repo, blood) => {
@@ -26,9 +24,9 @@ const commitToRepo = (repo, blood) => {
   JSON.stringify(blood, null, 2).to('blood.json');
   exec('git add .');
   exec(`git commit -m "Automatic commit: ${Date()}"`);
-  exec(`git push ${repo} gh-pages`, {silent: true});
+  exec(`git push ${repo} gh-pages`, { silent: true });
   exit(0);
-}
+};
 
 request(dataSource, (err, res, body) => {
   if (err) {
@@ -37,17 +35,18 @@ request(dataSource, (err, res, body) => {
   }
 
   const $ = cheerio.load(body);
-  let blood = {
-    time: moment().tz('Asia/Taipei').format()
+  const blood = {
+    time: moment().tz('Asia/Taipei').format(),
   };
 
   $('.Storage').each((i, elem) => {
     const name = $('#StorageHeader a', elem).text();
 
-    blood[name] = bloodTypes.reduce((acc, bloodType) => {
-      acc[bloodType] = statusMap[$(`#${bloodType} img`, elem).attr('src')];
-      return acc;
-    }, { name });
+    blood[name] = bloodTypes.reduce((acc, bloodType) => (
+      Object.assign(acc, {
+        [bloodType]: statusMap[$(`#${bloodType} img`, elem).attr('src')],
+      })
+    ), { name });
   });
 
   commitToRepo(repository, blood);
