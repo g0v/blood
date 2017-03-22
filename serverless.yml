@@ -11,3 +11,9 @@ functions:
       - http:
           path: get
           method: get
+          cors: true
+          response:
+            headers:
+              Content-Type: "application/json"
+              Cache-Control: "'max-age=86400'"
+
