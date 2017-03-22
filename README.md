@@ -1,15 +1,34 @@
-# Blood
+# blood
 
-A wrapper to get blood information from [血液基金會](http://www.blood.org.tw/Internet/main/index.aspx)
+A cron job for fetching data from blood.org.tw, convert to JSON file and send to gh-pages.
 
-you can access from here:
+# Generated JSON file
 
-https://a3pttu2gu0.execute-api.us-east-1.amazonaws.com/dev/get
+JSON file is generated every hour and upload to here: http://g0v.github.io/blood/blood.json
 
-# How it works
+# Run on local machine
 
-we create a fetch script on serverless & AWS Lambda to fetch web page of 血液基金會 and convert it to JSON file.
+Goto [Github Settings](https://github.com/settings/profile) -> **Personal access tokens** to create a new token.
+
+export GH_TOKEN & GH_REF to your environment variables
+
+```shell
+export GH_TOKEN=<YOUR_GITHUB_TOKEN>
+export GH_REF=github.com/g0v/blood.git
+```
+
+Install dependencies:
+
+```shell
+npm install
+```
+
+and execute `main.js` to fetch data blood.org.tw, convert to json and send to gh-pages.
+
+```shell
+node main.js
+```
 
 # License
 
-MIT
+MIT License
