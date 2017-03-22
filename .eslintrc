@@ -1,12 +1,3 @@
 {
-  "ecmaFeatures": {
-    "blockBindings": true
-  },
-
-  "env": {
-    "node": true
-  },
-  "rules": {
-    "quotes": [2, "single"]
-  }
+    "extends": "airbnb-base"
 }

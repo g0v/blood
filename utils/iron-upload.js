@@ -1,31 +1,30 @@
-'use strict';
-
 /* global env, exec */
 
-var path = require('path');
+const path = require('path');
 require('shelljs/global');
+require('dotenv').config();
 
-var PROJECT_DIR = path.join(__dirname, '..');
+const PROJECT_DIR = path.join(__dirname, '..');
 
-var iron = {
-  'token': env.IRON_TOKEN,
-  'project_id': env.IRON_PROJECT_ID
+const iron = {
+  token: process.env.IRON_TOKEN,
+  project_id: process.env.IRON_PROJECT_ID,
 };
 
-JSON.stringify(iron).to(PROJECT_DIR + '/iron.json');
+JSON.stringify(iron).to(`${PROJECT_DIR}/iron.json`);
 
-var worker = [
+const worker = [
   'runtime "node"',
-  'stack "node-0.10"',
+  'stack "node-4.1"',
   'exec "main.js"',
   'file "package.json"',
   'build "npm config set strict-ssl false; npm install --production"',
-  'set_env "GH_TOKEN", "' + env.GH_TOKEN + '"',
-  'set_env "GH_REF", "' + env.GH_REF + '"',
-  'remote'
+  `set_env "GH_TOKEN", "${process.env.GH_TOKEN}"`,
+  `set_env "GH_REF", "${process.env.GH_REF}"`,
+  'remote',
 ];
 
-worker.join('\n').to(PROJECT_DIR + '/blood.worker');
+worker.join('\n').to(`${PROJECT_DIR}/blood.worker`);
 
 
 exec('iron_worker upload blood', { silent: true });
