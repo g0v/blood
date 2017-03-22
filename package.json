@@ -28,6 +28,7 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "isomorphic-fetch": "^2.2.1",
+    "lambda-git": "^0.1.0",
     "moment-timezone": "^0.4.0",
     "shelljs": "^0.5.1"
   },

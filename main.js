@@ -5,8 +5,10 @@ var moment = require('moment-timezone');
 var cheerio = require('cheerio');
 require('isomorphic-fetch');
 require('shelljs/global');
+require('lambda-git')();
 
 function commit(json) {
+  cd('/tmp');
   rm('-rf', 'out');
   exec('git clone "https://' + process.env.GH_TOKEN +
        '@' + process.env.GH_REF + '" --depth 1 -b gh-pages out');
@@ -30,8 +32,7 @@ module.exports.fetch = (event, context, callback) => {
   fetch('http://www.blood.org.tw/Internet/main/index.aspx')
   .then(res => res.text())
   .then(html => {
-    let $ = cheerio.load(html);
-    console.log('storages');
+    var $ = cheerio.load(html);
     var storages = $('.Storage').toArray();
     var json = {time: moment().tz('Asia/Taipei').format()};
     storages.forEach(function(s) {

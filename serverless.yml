@@ -3,10 +3,13 @@ service: aws-nodejs
 provider:
   name: aws
   runtime: nodejs4.3
+  environment:
+    GH_TOKEN: ${file(env.yml):GH_TOKEN}
+    GH_REF: ${file(env.yml):GH_REF}
 
 functions:
   blood:
     handler: main.fetch
+    timeout: 30
     events:
       - schedule: rate(1 day)
-
