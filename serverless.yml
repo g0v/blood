@@ -1,0 +1,13 @@
+service: aws-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+  blood:
+    handler: main.fetch
+    events:
+      - http:
+          path: get
+          method: get
