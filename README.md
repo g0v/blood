@@ -4,11 +4,11 @@ A wrapper to get blood information from [血液基金會](http://www.blood.org.t
 
 you can access from here:
 
-https://a3pttu2gu0.execute-api.us-east-1.amazonaws.com/dev/get
+https://g0v.github.io/blood/blood.json
 
 # How it works
 
-we create a fetch script on serverless & AWS Lambda to fetch web page of 血液基金會 and convert it to JSON file.
+we create a fetch script on serverless & AWS Lambda to fetch web page of 血液基金會 everyday and convert it to JSON file.
 
 # License
 
