@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "A way to fetch blood.org.tw",
   "scripts": {
-    "lint": "eslint .",
-    "start": "node main.js",
     "test": "echo 'No test for now.'"
   },
   "keywords": [
@@ -24,21 +22,15 @@
     "url": "https://github.com/g0v/blood.git"
   },
   "engines": {
-    "node": "4.1.x",
-    "npm": "2.14.x"
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
   },
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "dotenv": "^2.0.0",
+    "jsdom": "^3.1.2",
     "moment-timezone": "^0.4.0",
-    "request": "^2.74.0",
     "shelljs": "^0.5.1"
   },
-  "devDependencies": {
-    "eslint": "^3.3.1",
-    "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-import": "^1.14.0"
-  },
+  "devDependencies": {},
   "bundleDependencies": [],
   "main": "main.js",
   "license": "MIT"
