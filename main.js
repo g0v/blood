@@ -5,22 +5,6 @@ var moment = require('moment-timezone');
 var cheerio = require('cheerio');
 require('isomorphic-fetch');
 require('shelljs/global');
-require('lambda-git')();
-
-function commit(json) {
-  cd('/tmp');
-  rm('-rf', 'out');
-  exec('git clone "https://' + process.env.GH_TOKEN +
-       '@' + process.env.GH_REF + '" --depth 1 -b gh-pages out');
-  cd('out');
-  exec('git config user.name "Automatic Commit"');
-  exec('git config user.email "blood@g0v.tw"');
-  JSON.stringify(json, null, 2).to('blood.json');
-  exec('git add .');
-  exec('git commit -m "Automatic commit: ' + Date() + '"');
-  exec('git push "https://' + process.env.GH_TOKEN +
-       '@' + process.env.GH_REF + '" gh-pages', {silent: true});
-}
 
 module.exports.fetch = (event, context, callback) => {
   var status = {
@@ -45,7 +29,8 @@ module.exports.fetch = (event, context, callback) => {
       });
     });
 
-    commit(json);
+    mkdir('-p', 'out');
+    JSON.stringify(json, null, 2).to('out/blood.json');
     callback(null, json);
   })
   .catch(err => callback(err));

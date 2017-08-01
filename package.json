@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A way to fetch blood.org.tw",
   "scripts": {
-    "test": "echo 'No test for now.'"
+    "start": "node main.js"
   },
   "keywords": [
     "OpenShift",
@@ -28,7 +28,6 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "isomorphic-fetch": "^2.2.1",
-    "lambda-git": "^0.1.0",
     "moment-timezone": "^0.4.0",
     "shelljs": "^0.5.1"
   },
