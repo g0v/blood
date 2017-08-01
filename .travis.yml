@@ -4,12 +4,6 @@ node_js:
 
 script: npm start
 
-env:
-  global:
-  - GH_REF=github.com/g0v/blood.git
-  # GH_TOKEN
-  - secure: "r31jflmSvTMHmLSxPL/KJVmADhwW4lLvYaTLus8xHKkFfqYpCMeyEvOoHKIxWdNHUIoOFkSp0Sp9XRAXwdk/qAuBhuprY/o1Mi/sXnzQNN2UVfIZhuoRfKom6/Xigy0MGBuCmdLI3tUUspdIfvtqLO7zsWPgi5oYfIGI33TX5jz7s3nUqC5WkjYv7RXr+SBBAZ74+xHXqOU8vAHI/Kt7SHBiuwNaCyhe6+tCerJAJNkvxOLpdHeHKKtYlucnDE0nblhTS5oeymbFVyvHciYDUVyGfUlWkOf4lLwAoQpqMAue33IPBJOBuHtZHTlkt9OTd05V/YUdIB0954RaHJVRkBFH2kTZnvqLxxC1o6YqYRgsi8LAOeV7kbRG7QrJrU4kKiTyAWvgz+MAm+u0UX1kkWBvM87bTs9MCJOVSP5KuWjmMwsRn7NAvQ2C9kmNS0W5J7jd6TzS1e2qLU00iCNEmQq5fVHsk1CGfeXYqh1y3NDaSK4Jv9M+dfGT5lYFZv9/3jGIAUZ/wnRhyVCsMcwf9e9kFv3TIfQMyi2UzqSgrSJR96oQrgd54VS1uDmGYc0yfWb3Kcgeg50EzAWypVjDZwxdA9hKT6ds6OZvnQsYEeOnATONzkyok7MXtT3nPNlbuQFB12/RzJP6+u/Y1STHFybw3LVRf9V4t9Inu2bcgko="
-
 deploy:
   provider: pages
   skip_cleanup: true
